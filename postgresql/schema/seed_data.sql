@@ -5,11 +5,11 @@ INSERT INTO clients (nom, email) VALUES
 ('Claire Leroy', 'claire.leroy@example.com');
 
 -- Insertion de produits
-INSERT INTO produits (nom, categorie, prix, stock) VALUES
-('Macbook pro 2025', 'Informatique', 1899.99, 10),
-('Samsung Galaxy S25', 'Téléphonie', 999.99, 25),
-('Jabra Evolve 75', 'Accessoires', 79.99, 50),
-('Roccat Vulkan 120', 'Informatique', 129.99, 15);
+INSERT INTO produits (nom, famille, categorie, prix, stock) VALUES
+('Macbook pro 2025', 'Ordinateur portable', 'Informatique', 1899.99, 10),
+('Samsung Galaxy S25', 'Smartphone', 'Téléphonie', 999.99, 25),
+('Bose QuietComfort', 'Casque audio', 'Son', 179.99, 50),
+('Roccat Vulkan 120', 'Clavier', 'Informatique', 129.99, 15);
 
 -- Insertion de commandes
 INSERT INTO commandes (client_id, statut) VALUES
@@ -20,6 +20,6 @@ INSERT INTO commandes (client_id, statut) VALUES
 -- Insertion de lignes de commande
 INSERT INTO lignes_commandes (commande_id, produit_id, quantite, prix_unitaire) VALUES
 (1, 1, 1, 1899.99),   -- Alice a acheté un ordinateur portable
-(1, 3, 2, 79.99),    -- Alice a aussi pris 2 casques audio
+(1, 3, 2, 179.99),    -- Alice a aussi pris 2 casques audio
 (2, 2, 1, 999.99),   -- Bob a commandé un smartphone
 (3, 4, 1, 129.99);   -- Alice a commandé un clavier mécanique

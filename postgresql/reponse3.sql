@@ -1,3 +1,7 @@
+select * from produits;
+select * from lignes_commandes;
+select * from commandes;
+
 --Compter le nombre de produits disponibles dans la table produits.
 SELECT count(DISTINCT produit_id) 
 FROM produits;
@@ -25,8 +29,18 @@ FROM produits
 GROUP BY famille;
 
 --Afficher l’écart-type des prix des produits pour analyser la dispersion.
+SELECT categorie, STDDEV(prix) as "Ecart-type des prix"
+FROM produits
+GROUP BY categorie;
 
 --Calculer le montant total des ventes par client.
+SELECT c.nom, SUM(lc.quantite * lc.prix_unitaire) AS "Montant total" 
+FROM commandes co
+INNER JOIN clients c ON co.client_id = c.client_id
+INNER JOIN lignes_commandes lc ON co.commande_id = lc.commande_id
+INNER JOIN produits p ON lc.produit_id = p.produit_id
+GROUP BY c.nom
+ORDER BY "Montant total" DESC ;
 
 --Afficher les commandes passées en 2025 et leur nombre.
 

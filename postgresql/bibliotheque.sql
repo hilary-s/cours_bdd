@@ -51,5 +51,12 @@
 -- (2, 'Victor HUGO'), 
 -- (3, 'Molière');
  
+
+INSERT INTO livre (id, titre, année_publication, auteur_id) VALUES 
+(1, 'Le Petit Prince', 1756, 2), 
+(2, 'Le rouge et le noir', 1265, 3), 
+(3, 'Le jour où tout à basculé', 2006, 1);
+
+
 SELECT *
-FROM auteur;
+FROM livre;

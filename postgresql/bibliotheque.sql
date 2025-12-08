@@ -17,7 +17,7 @@
 --     titre VARCHAR(255) NOT NULL,
 --     année_publication INT,
 --     auteur_id INT REFERENCES auteur(id)
---         ON DELETE SET NULL
+--         ON DELETE SET NULL  --si on supprime un auteur, le champs devient nul
 -- );
 
 -- -- Création de la table cursus
@@ -38,11 +38,11 @@
 -- CREATE TABLE emprunt (
 --     id INT PRIMARY KEY,
 --     livre_id INT REFERENCES livre(id)
---         ON DELETE SET NULL,
+--         ON DELETE CASCADE,
 --     etudiant_id INT REFERENCES etudiant(id)
---         ON DELETE SET NULL,
---     date_emprunt TIMESTAMP,
---     date_retour TIMESTAMP
+--         ON DELETE CASCADE,
+--     date_emprunt DATE NOT NULL,
+--     date_retour DATE
 -- );
 
 

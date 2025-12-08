@@ -50,12 +50,20 @@
 -- (1, 'Morgane MOIRE'), 
 -- (2, 'Victor HUGO'), 
 -- (3, 'Molière');
- 
 
-INSERT INTO livre (id, titre, année_publication, auteur_id) VALUES 
-(1, 'Le Petit Prince', 1756, 2), 
-(2, 'Le rouge et le noir', 1265, 3), 
-(3, 'Le jour où tout à basculé', 2006, 1);
+-- INSERT INTO livre (id, titre, année_publication, auteur_id) VALUES 
+-- (1, 'Le Petit Prince', 1756, 2), 
+-- (2, 'Le rouge et le noir', 1265, 3), 
+-- (3, 'Le jour où tout à basculé', 2006, 1);
+
+-- INSERT INTO cursus (id, nom)
+--     VALUES (1, 'Statistique'), (2, 'Droit'), (3, 'Économie'),(4, 'SDD') ;
+    
+-- INSERT INTO etudiant (id, nom, cursus_id)
+-- VALUES (504, 'lulu', 4),(412, 'momo', 2), (105, 'lolo', 3), (304, 'leane', 2);
+
+INSERT INTO emprunt (id,livre_id,etudiant_id,date_emprunt,date_retour)
+VALUES (10052,1,504,'21/02/2024',''), (54005,3,304,'15/06/2024','30/06/2024'), (30587,2,504,'05/02/2025','01/03/2025') ;
 
 
 SELECT *
